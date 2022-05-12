@@ -1,0 +1,6 @@
+FROM openjdk:8u332-slim
+RUN apt-get update \
+		&& DEBIAN_FRONTEND=noninteractive apt-get install -y \
+			procps net-tools iputils-ping curl jq \
+	  && apt-get clean \
+	  && rm -rf /var/lib/apt/lists/*
